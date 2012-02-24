@@ -22,3 +22,6 @@ gem "bson_ext", ">= 1.5.2"
 gem "mongoid", ">= 2.4.4"
 gem "devise", ">= 2.0.4"
 gem "bootstrap-sass", "~> 2.0.1"
+gem 'redis'
+gem 'poirot'
+gem 'pubnub-ruby'

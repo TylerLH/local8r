@@ -1,5 +1,11 @@
 Local8r::Application.routes.draw do
-  
+
+  # Pub/Sub routes
+  match '/start' => "home#start"
+  match '/stop' => "home#stop"
+  match "/publish" => "messages#publish"
+  match "/subscribe/:channel?" => "messages#subscribe"
+  match "/history/:channel?/:limit?" => "messages#history"
 
   root :to => "home#index"
 

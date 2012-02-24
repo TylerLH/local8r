@@ -14,14 +14,18 @@
 
 @import 'bootstrap';
 
-header nav ul {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
-}
-header nav ul li {
-  display: inline;
-}
+html { height: 100% }
+body, .container-fluid { height: 100%; margin: 0; padding: 0; }
+body { padding-top: 40px; }
+
+.navbar { height: 40px; }
+
+
+div.growlUI h1, div.growlUI h2, div.growlUI p {
+	color: white; padding: 5px 5px 5px 5px; text-align: left; }
+.growlUI h1 { font-size: 1.3em }
+.growlUI h2 { font-size: 1em; line-height: 1.1em; }
+
 #flash_notice, #flash_alert {
   padding: 5px 8px;
   margin: 10px 0;

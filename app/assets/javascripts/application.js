@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree .
+//= require plugins/modernizr
+//= require plugins/blockui
+//= require lib/map
+//= require lib/socket
+//= require home

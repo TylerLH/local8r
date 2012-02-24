@@ -6,16 +6,24 @@
     %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
     = stylesheet_link_tag :application, :media => "all"
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAkuXmzfmPUJhl_NIovkI6FNtbHRBXCgCU&sensor=true"
     = javascript_include_tag :application
     = csrf_meta_tags
   %body{:class => params[:controller]}
-    #container.container
+    #container.container-fluid
       %header
-        %nav
-          %ul.hmenu
-            = render 'shared/navigation'
+        .navbar.navbar-fixed-top
+          .navbar-inner
+            .container
+              %a.brand{:href => '/' } Local8r
+              %nav.pull-right
+                %ul.nav
+                  -# = render 'shared/navigation'
+                  %li.username
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
       #main{:role => "main"}
         = yield
       %footer
+    = render 'shared/modals'
+    = render 'shared/pubnub'

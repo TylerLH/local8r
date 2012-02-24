@@ -1,0 +1,15 @@
+-# _modals.html.haml
+
+#get-started.modal.hide.fade.in
+	.modal-header
+		%center
+			-# %a.close{"data-dismiss" => "modal"} x
+			%h3 Local8r connects you with people based on your location
+	.modal-body
+		%center
+			%p Chat locally or far from home. Meet people wherever you want!
+			%h4 Get started below...
+			%br
+			%input#username.span4{:placeholder => "Enter a name you'd like to go by", :style => "text-align: center"}
+	.modal-footer
+		= link_to "Start Using Local8r", "#", :class => "btn btn-success btn-large", :id => "start-btn", "data-dismiss" => "modal"
