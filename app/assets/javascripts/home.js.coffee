@@ -14,6 +14,10 @@ initializeMap = (position) ->
       lat: position.coords.latitude
       lng: position.coords.longitude
 
+  window.clientLocation = 
+    lat: position.coords.latitude
+    lng: position.coords.longitude
+
   window.userMap = new window.map(mapOptions)
 mapError = (err) ->
   $.growlUI('Houston, we have a problem...', "We couldn't pinpoint you on the map!")

@@ -15,10 +15,10 @@ window.map =
 		  @map = new google.maps.Map(document.getElementById("map_canvas"), @mapOptions)
 
 		  # Add a marker with user position
-		  markerOpts =
-		  	position: @location
-		  	title: "This is you!"
-		  @addMarker(markerOpts)
+		  # markerOpts =
+			#		position: @location
+			#		title: "This is you!"
+		  # @addMarker(markerOpts)
 
 		# Adds a marker to the map
 		addMarker: (opts) =>

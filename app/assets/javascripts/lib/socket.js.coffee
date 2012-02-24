@@ -5,13 +5,13 @@ window.socket =
     constructor: (opts) ->
       @channel = opts.channel
       @username = opts.username
-      @latitude = opts.latitude
-      @longitude = opts.longitude
       PUBNUB.subscribe
         channel: @channel
         restore: false
         callback: (message) =>
           $.growlUI('New message', message.text)
+          coords = new google.maps.LatLng(message.lat, message.lng)
+          window.userMap.addMarker({position: coords})
           console.log(message)
 
         disconnect: =>
@@ -34,6 +34,8 @@ window.socket =
             channel: @channel
             message:
               text: "#{@username} has joined."
+              lat: window.clientLocation.lat
+              lng: window.clientLocation.lng
           $.ajax(
             '/start'
             dataType: 'json'
